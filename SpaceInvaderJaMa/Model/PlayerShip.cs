@@ -12,19 +12,22 @@ namespace SpaceInvaderJaMa.Model
 {
     class PlayerShip : BasicSpriteComponent
     {
+        #region Properties
         private float Speed {  get; set; }
+        #endregion
 
+        #region Constructor
         public PlayerShip(Game game, string name, Texture2D image) : base(game, name, image)
         {
             Speed = 200;
-            Position = new Vector2((int)((double) game.GraphicsDevice.Viewport.Width * 0.1), (int)((double)game.GraphicsDevice.Viewport.Height * 0.9));
+            Position = new Vector2((int)(game.GraphicsDevice.Viewport.Width * 0.1), (int)(game.GraphicsDevice.Viewport.Height * 0.9));
         }
+        #endregion
 
+        #region Methods
         public override void Update(GameTime gameTime)
         {
             Controls(gameTime);
-
-
         }
 
         private void Controls(GameTime gameTime)
@@ -33,16 +36,16 @@ namespace SpaceInvaderJaMa.Model
 
             if (currentKeyboardState.IsKeyDown(Keys.D))
             {
-                if (Position.X >= ((double) Game.GraphicsDevice.Viewport.Width * 0.1) && Position.X <= ((double)Game.GraphicsDevice.Viewport.Width * 0.9))
+                if (Position.X >= (Game.GraphicsDevice.Viewport.Width * 0.1) - Size.X && Position.X <= (Game.GraphicsDevice.Viewport.Width * 0.85))
                     Position += Right * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
             }
 
             if (currentKeyboardState.IsKeyDown(Keys.A))
             {
-                if (Position.X >= ((double)Game.GraphicsDevice.Viewport.Width * 0.1) && Position.X <= ((double)Game.GraphicsDevice.Viewport.Width * 0.9))
+                if (Position.X >= (Game.GraphicsDevice.Viewport.Width * 0.1) && Position.X <= (Game.GraphicsDevice.Viewport.Width * 0.85) + Size.X)
                     Position -= Right * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
             }
         }
-
+        #endregion
     }
 }
