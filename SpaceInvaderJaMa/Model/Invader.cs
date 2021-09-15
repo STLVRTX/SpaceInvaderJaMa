@@ -12,7 +12,7 @@ namespace SpaceInvaderJaMa.Model
     class Invader : BasicSpriteComponent
     {
         #region Fields
-        private static float speed = 20;
+        private static float speed = 15;
         private Vector2 internPos;
         private static float spacing = 15;
         #endregion
@@ -44,7 +44,8 @@ namespace SpaceInvaderJaMa.Model
             }
         }
 
-        private static Vector2 StartPos {  get; set; }
+        public static Vector2 StartPos {  get; set; }
+        public static bool DirRight {  get; set; }
         #endregion
 
         #region Constructor
@@ -53,8 +54,8 @@ namespace SpaceInvaderJaMa.Model
             Speed = speed;
             InternPos = internPos;
             StartPos = new Vector2(game.GraphicsDevice.Viewport.Width * 0.1f, game.GraphicsDevice.Viewport.Height * 0.3f);
+            DirRight = true;
             CalcPosition();
-
         }
         #endregion
 
@@ -66,6 +67,27 @@ namespace SpaceInvaderJaMa.Model
 
             Position = new Vector2(x, y);
         }
+
+        public override void Update(GameTime gameTime)
+        {
+            MoveInvader(gameTime);
+            CheckMovement(gameTime);
+
+        }
+
+        private void MoveInvader(GameTime gameTime)
+        {
+            if (DirRight)
+                Position += Right * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
+            else
+                Position -= Right * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
+        }
+        private void CheckMovement(GameTime gameTime)
+        {
+            
+        }
+
+
         #endregion
     }
 }

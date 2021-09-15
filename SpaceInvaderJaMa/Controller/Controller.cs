@@ -12,8 +12,7 @@ namespace SpaceInvaderJaMa
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        PlayerShip playerShip;
-        Invader invader;
+        Level level;
 
         public Controller()
         {
@@ -45,18 +44,7 @@ namespace SpaceInvaderJaMa
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            playerShip = new PlayerShip(this, "PlayerShip", Content.Load<Texture2D>("Ship"));
-            Components.Add(playerShip);
-
-            for (int y = 0; y < 5; y++)
-            {
-                for (int x = 0; x < 10; x++)
-                {
-                    invader = new Invader(this, "InvaderA", Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y));
-                    Components.Add(invader);
-                }
-
-            }
+            level = new Level(this);
 
 
 
