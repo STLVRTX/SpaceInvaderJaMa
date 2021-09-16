@@ -14,7 +14,7 @@ namespace SpaceInvaderJaMa
         [STAThread]
         static void Main()
         {
-            using (var game = new Controller())
+            using (var game = new GameController())
                 game.Run();
         }
     }

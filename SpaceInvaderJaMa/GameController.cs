@@ -8,13 +8,13 @@ namespace SpaceInvaderJaMa
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Controller : Game
+    public class GameController : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Level level;
 
-        public Controller()
+        public GameController()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 600;
@@ -70,7 +70,7 @@ namespace SpaceInvaderJaMa
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            level.CheckMovement(gameTime);
 
             base.Update(gameTime);
         }

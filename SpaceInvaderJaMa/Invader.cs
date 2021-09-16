@@ -12,9 +12,10 @@ namespace SpaceInvaderJaMa.Model
     class Invader : BasicSpriteComponent
     {
         #region Fields
-        private static float speed = 15;
         private Vector2 internPos;
-        private static float spacing = 15;
+        private static float speed;
+        private float tempTime = 0;
+        private bool animSwitch = true;
         #endregion
 
         #region Properties
@@ -31,7 +32,6 @@ namespace SpaceInvaderJaMa.Model
             }
 
         }
-
         public Vector2 InternPos
         {
             get {  return internPos; }
@@ -43,16 +43,20 @@ namespace SpaceInvaderJaMa.Model
                     throw new Exception("Invalid invader position");
             }
         }
-
+        public static float Spacing { get; set; }
         public static Vector2 StartPos {  get; set; }
         public static bool DirRight {  get; set; }
+        public static float AnimationDelay {  get; set; }
         #endregion
 
         #region Constructor
         public Invader(Game game, string name, Texture2D image, Vector2 internPos) : base(game, name, image)
         {
-            Speed = speed;
             InternPos = internPos;
+
+            AnimationDelay = 200;
+            Speed = 15;
+            Spacing = 15;
             StartPos = new Vector2(game.GraphicsDevice.Viewport.Width * 0.1f, game.GraphicsDevice.Viewport.Height * 0.3f);
             DirRight = true;
             CalcPosition();
@@ -62,8 +66,8 @@ namespace SpaceInvaderJaMa.Model
         #region Methods
         private void CalcPosition()
         {
-            float x = StartPos.X + (internPos.X * (Size.X + spacing));
-            float y = StartPos.Y + (internPos.Y * (Size.Y + spacing));
+            float x = StartPos.X + (internPos.X * (Size.X + Spacing));
+            float y = StartPos.Y + (internPos.Y * (Size.Y + Spacing));
 
             Position = new Vector2(x, y);
         }
@@ -71,8 +75,7 @@ namespace SpaceInvaderJaMa.Model
         public override void Update(GameTime gameTime)
         {
             MoveInvader(gameTime);
-            CheckMovement(gameTime);
-
+            Animation(gameTime);
         }
 
         private void MoveInvader(GameTime gameTime)
@@ -82,10 +85,29 @@ namespace SpaceInvaderJaMa.Model
             else
                 Position -= Right * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
         }
-        private void CheckMovement(GameTime gameTime)
+
+        private void Animation(GameTime gameTime)
         {
+            tempTime += (float) gameTime.ElapsedGameTime.TotalMilliseconds;
             
+            if(tempTime >= AnimationDelay)
+            {
+                string name = Texture.Name.Substring(0, Texture.Name.Length - 1);
+                if (animSwitch == true)
+                {
+                    Texture = Game.Content.Load<Texture2D>(name + "1");
+                    animSwitch = false;
+                }
+                else
+                {
+                    Texture = Game.Content.Load<Texture2D>(name + "0");
+                    animSwitch = true;
+                }
+
+                tempTime -= tempTime;
+            }
         }
+
 
 
         #endregion
