@@ -45,6 +45,11 @@ namespace SpaceInvaderJaMa.Model
                 if (Position.X >= (Game.GraphicsDevice.Viewport.Width * 0.1) && Position.X <= (Game.GraphicsDevice.Viewport.Width * 0.85) + Size.X)
                     Position -= Right * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
             }
+
+            if (currentKeyboardState.IsKeyDown(Keys.Space))
+            {
+                Shot s = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"));
+            }
         }
         #endregion
     }

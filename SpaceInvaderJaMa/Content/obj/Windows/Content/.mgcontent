@@ -4,26 +4,28 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderA_00.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderA_00@2x.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderA_01.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderA_01@2x.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderB_00.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderB_00@2x.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderB_01.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderB_01@2x.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderBullet.wav</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderC_00.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderC_00@2x.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderC_01.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderC_01@2x.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderHit.wav</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/Ship.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/Ship@2x.png</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/ShipBullet.wav</File>
-    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/ShipHit.wav</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InavderShot.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderA_00.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderA_00@2x.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderA_01.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderA_01@2x.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderB_00.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderB_00@2x.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderB_01.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderB_01@2x.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderBullet.wav</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderC_00.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderC_00@2x.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderC_01.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderC_01@2x.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/InvaderHit.wav</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/Ship.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/Ship@2x.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/ShipBullet.wav</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/SpaceInvaderJaMa/Content/ShipHit.wav</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
