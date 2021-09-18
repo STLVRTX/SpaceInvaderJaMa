@@ -16,6 +16,9 @@ namespace SpaceInvaderJaMa.Model
         private static float speed;
         private float tempTime = 0;
         private bool animSwitch = true;
+        public static List<Invader> shootingInvaders = new List<Invader>();
+        public static List<Shot> invaderShots = new List<Shot>();
+        private float invaderShotDelay = 500;
         #endregion
 
         #region Properties
@@ -73,9 +76,25 @@ namespace SpaceInvaderJaMa.Model
 
         public override void Update(GameTime gameTime)
         {
-            MoveInvader(gameTime);
-            Animation(gameTime);
-            DetectCollision();   
+            if(GameState.CurrentGameState == "Game")
+            {
+                MoveInvader(gameTime);
+                Animation(gameTime);
+                DetectCollision();
+                /*foreach (Shot s in invaderShots)
+                {
+                    s.Position -= Up * (float)gameTime.ElapsedGameTime.TotalSeconds * 4;
+                }
+                if(shootingInvaders.Count > 1 && invaderShotDelay <= 0)
+                {
+                    invaderShotDelay = 500;
+                    InvaderShot();
+                }
+                else
+                {
+                    invaderShotDelay -= (float) gameTime.ElapsedGameTime.TotalMilliseconds;
+                }*/
+            }
         }
 
         private void MoveInvader(GameTime gameTime)
@@ -116,11 +135,43 @@ namespace SpaceInvaderJaMa.Model
                 {
                     PlayerShip.bullets.Remove(s);
                     Level.invaders.Remove(this);
+                    shootingInvaders.Remove(this);
                     Game.Components.Remove(s);
                     Game.Components.Remove(this);
+                    //FindLowestInvaderRow();
                 }
             }
         }
+
+        /*public void Shoot()
+        {
+            Shot s = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition);
+            Game.Components.Add(s);
+            invaderShots.Add(s);
+        }
+
+        public void InvaderShot()
+        {
+            int random = new Random().Next(0, shootingInvaders.Count-1);
+            shootingInvaders[random].Shoot();
+        }
+
+        public static void FindLowestInvaderRow()
+        {
+            float minY = 0;
+            for(int i = 0; i < 11; i++)
+            {
+                for(int j = 0; j < 5; j++)
+                {
+                    if (Level.Enemies[j].Position.Y > minY)
+                    {
+                        minY = Level.Enemies[j].Position.Y;
+                    }
+                    List<Invader> temp = Level.invaders.FindAll(x => x.Position.Y == minY);
+                    foreach (Invader inv in temp) { shootingInvaders.Add(inv); }
+                }     
+            }
+        }*/
         #endregion
     }
 }

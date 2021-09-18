@@ -11,22 +11,28 @@ namespace SpaceInvaderJaMa.Model
 {
     public class Shot : BasicSpriteComponent
     {
+        #region Properties
         public float Speed
         {
             get; set;
         }
+        #endregion
 
+        #region Constructor
         public Shot(Game game, string name, Texture2D image, Vector2 shipPosition) : base(game, name, image)
         {
             Speed = 200f;
             Position = new Vector2(shipPosition.X, shipPosition.Y-12);
         }
+        #endregion
 
+        #region Methods
         public bool OutOfFrame()
         {
             if(Position.Y <= 200) { Game.Components.Remove(this); return true;}
             return false;
         }
+        #endregion
     }
 }
 

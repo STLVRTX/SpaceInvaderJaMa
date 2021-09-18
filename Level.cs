@@ -17,7 +17,7 @@ namespace SpaceInvaderJaMa.Model
         #endregion
 
         #region Properties
-        public Invader[] Enemies {  get; set; }
+        public static Invader[] Enemies {  get; set; }
         public Game Game { get; set; }
         public PlayerShip PlayerShip { get; set; }
         #endregion

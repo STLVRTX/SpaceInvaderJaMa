@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GameController.cs" />
+    <Compile Include="GameState.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Invader.cs" />
     <Compile Include="PlayerShip.cs" />

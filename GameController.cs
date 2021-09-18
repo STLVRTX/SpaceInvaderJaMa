@@ -10,7 +10,6 @@ namespace SpaceInvaderJaMa
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Level level;
-        Texture2D _texture;
 
         public GameController()
         {
@@ -22,8 +21,7 @@ namespace SpaceInvaderJaMa
 
         protected override void Initialize()
         {
-            _texture = new Texture2D(GraphicsDevice, 1, 1);
-            _texture.SetData(new Color[] { Color.Red });
+            GameState.CurrentGameState = "Menu";
             base.Initialize();
         }
 
@@ -38,13 +36,32 @@ namespace SpaceInvaderJaMa
         {
 
         }
-
+        
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            level.CheckMovement(gameTime);
+            switch (GameState.CurrentGameState)
+            {
+                case "Menu":
+                    if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                        GameState.CurrentGameState = "Game";
+                    break;
+                
+                case "Game":
+                    if(Level.invaders.Count == 0) { GameState.CurrentGameState = "Game Over"; }
+                    if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                        GameState.CurrentGameState = "Paused";
+                    level.CheckMovement(gameTime);
+                    break;
+                
+                case "Paused":
+                    //if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                        //Exit();
+                    if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                        GameState.CurrentGameState = "Game";
+                    break;
+               
+                case "Game Over": break;
+            }
 
             base.Update(gameTime);
         }

@@ -35,12 +35,15 @@ namespace SpaceInvaderJaMa.Model
         #region Methods
         public override void Update(GameTime gameTime)
         {
-            Controls(gameTime);
-            bullets.RemoveAll(s => s.OutOfFrame());
-            foreach(Shot s in bullets)
+            if(GameState.CurrentGameState == "Game")
             {
-                s.Position += Up * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
-            }
+                Controls(gameTime);
+                bullets.RemoveAll(s => s.OutOfFrame());
+                foreach (Shot s in bullets)
+                {
+                    s.Position += Up * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
+                }
+            }  
         }
 
         private void Controls(GameTime gameTime)
@@ -78,6 +81,19 @@ namespace SpaceInvaderJaMa.Model
             else
             {
                 ShotDelay -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            }
+        }
+
+        public void DetectCollision()
+        {
+            foreach(Shot s in Invader.invaderShots.ToArray())
+            {
+                if (new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Size.X, this.Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
+                {
+                    Invader.invaderShots.Remove(s);
+                    //reduce hp
+                    Game.Components.Remove(s);
+                }
             }
         }
         #endregion
