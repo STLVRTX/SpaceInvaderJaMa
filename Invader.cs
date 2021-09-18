@@ -53,7 +53,6 @@ namespace SpaceInvaderJaMa.Model
         public Invader(Game game, string name, Texture2D image, Vector2 internPos) : base(game, name, image)
         {
             InternPos = internPos;
-
             AnimationDelay = 200;
             Speed = 15;
             Spacing = 15;
@@ -76,6 +75,7 @@ namespace SpaceInvaderJaMa.Model
         {
             MoveInvader(gameTime);
             Animation(gameTime);
+            DetectCollision();   
         }
 
         private void MoveInvader(GameTime gameTime)
@@ -105,6 +105,20 @@ namespace SpaceInvaderJaMa.Model
                 }
 
                 tempTime -= tempTime;
+            }
+        }
+
+        public void DetectCollision()
+        {
+            foreach(Shot s in PlayerShip.bullets.ToArray())
+            {
+                if (new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Size.X, this.Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
+                {
+                    PlayerShip.bullets.Remove(s);
+                    Level.invaders.Remove(this);
+                    Game.Components.Remove(s);
+                    Game.Components.Remove(this);
+                }
             }
         }
         #endregion

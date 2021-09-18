@@ -11,7 +11,6 @@ namespace SpaceInvaderJaMa.Model
 {
     public class Shot : BasicSpriteComponent
     {
-        private PlayerShip playerShip;
         public float Speed
         {
             get; set;
@@ -28,7 +27,6 @@ namespace SpaceInvaderJaMa.Model
             if(Position.Y <= 200) { Game.Components.Remove(this); return true;}
             return false;
         }
-
     }
 }
 

@@ -5,6 +5,11 @@
       "ProjectGuid": "b49339d4-96d7-4581-8f34-2fd1104ec325",
       "DisplayName": "SpaceInvaderJaMa",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

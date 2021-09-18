@@ -4,14 +4,14 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Seraph/Desktop/SpaceInvaderJaMa/Content/InvaderA_00.png</File>
-    <File>C:/Users/Seraph/Desktop/SpaceInvaderJaMa/Content/InvaderA_01.png</File>
-    <File>C:/Users/Seraph/Desktop/SpaceInvaderJaMa/Content/InvaderB_00.png</File>
-    <File>C:/Users/Seraph/Desktop/SpaceInvaderJaMa/Content/InvaderB_01.png</File>
-    <File>C:/Users/Seraph/Desktop/SpaceInvaderJaMa/Content/InvaderC_00.png</File>
-    <File>C:/Users/Seraph/Desktop/SpaceInvaderJaMa/Content/InvaderC_01.png</File>
-    <File>C:/Users/Seraph/Desktop/SpaceInvaderJaMa/Content/InvaderShot.png</File>
-    <File>C:/Users/Seraph/Desktop/SpaceInvaderJaMa/Content/Ship.png</File>
+    <File>C:/Users/Seraph/source/repos/SirBloody/SpaceInvaderJaMa/Content/InvaderA_00.png</File>
+    <File>C:/Users/Seraph/source/repos/SirBloody/SpaceInvaderJaMa/Content/InvaderA_01.png</File>
+    <File>C:/Users/Seraph/source/repos/SirBloody/SpaceInvaderJaMa/Content/InvaderB_00.png</File>
+    <File>C:/Users/Seraph/source/repos/SirBloody/SpaceInvaderJaMa/Content/InvaderB_01.png</File>
+    <File>C:/Users/Seraph/source/repos/SirBloody/SpaceInvaderJaMa/Content/InvaderC_00.png</File>
+    <File>C:/Users/Seraph/source/repos/SirBloody/SpaceInvaderJaMa/Content/InvaderC_01.png</File>
+    <File>C:/Users/Seraph/source/repos/SirBloody/SpaceInvaderJaMa/Content/InvaderShot.png</File>
+    <File>C:/Users/Seraph/source/repos/SirBloody/SpaceInvaderJaMa/Content/Ship.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

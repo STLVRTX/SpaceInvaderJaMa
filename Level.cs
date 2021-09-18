@@ -11,9 +11,9 @@ namespace SpaceInvaderJaMa.Model
     class Level
     {
         #region Fields
-        private PlayerShip playerShip;
+        private static PlayerShip playerShip;
         private static int[] size = { 11, 5 };
-        public List<Invader> ivs = new List<Invader>();
+        public static List<Invader> invaders = new List<Invader>();
         #endregion
 
         #region Properties
@@ -33,11 +33,13 @@ namespace SpaceInvaderJaMa.Model
         #endregion
 
         #region Methods
-        private void CreatePlayerShip()
+        private PlayerShip CreatePlayerShip()
         {
-            playerShip = new PlayerShip(Game, "PlayerShip", Game.Content.Load<Texture2D>("Ship"));
+            playerShip = new PlayerShip(Game, "PlayerShip", Game.Content.Load<Texture2D>("Ship"));  
             Game.Components.Add(playerShip);
+            return playerShip;
         }
+
         private void CreateInvaders()
         {
             int index = 0;
@@ -47,30 +49,31 @@ namespace SpaceInvaderJaMa.Model
                 {
                     index = x + (y * size[0]);
                     Enemies[index] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y));
-                    ivs.Add(Enemies[index]);
+                    invaders.Add(Enemies[index]);
                     Game.Components.Add(Enemies[index]);
                 }
             }
         }
+
         public void CheckMovement(GameTime gameTime)
         {
-            for (int i = 0; i < Enemies.Length; i++)
+            foreach(Invader i in invaders)
             {
-                if (Enemies[i].Position.X >= Game.GraphicsDevice.Viewport.Width * 0.85f && Invader.DirRight)
+                if (i.Position.X >= Game.GraphicsDevice.Viewport.Width * 0.95f && Invader.DirRight)
                 {
-                    for (int j = 0; j < Enemies.Length; j++)
+                    foreach(Invader ii in invaders)
                     {
-                        Enemies[j].Position = new Vector2(Enemies[j].Position.X, Enemies[j].Position.Y + (Enemies[j].Size.Y + Invader.Spacing));
+                        ii.Position = new Vector2(ii.Position.X, ii.Position.Y + (ii.Size.Y + Invader.Spacing));
                     }
                     Invader.DirRight = false;
                     break;
                 }
 
-                if (Enemies[i].Position.X <= Game.GraphicsDevice.Viewport.Width * 0.1f && !Invader.DirRight)
+                if (i.Position.X <= Game.GraphicsDevice.Viewport.Width * 0.05f && !Invader.DirRight)
                 {
-                    for (int j = 0; j < Enemies.Length; j++)
+                    foreach(Invader ii in invaders)
                     {
-                        Enemies[j].Position = new Vector2(Enemies[j].Position.X, Enemies[j].Position.Y + (Enemies[j].Size.Y + Invader.Spacing));
+                        ii.Position = new Vector2(ii.Position.X, ii.Position.Y + (ii.Size.Y + Invader.Spacing));
                     }
                     Invader.DirRight = true;
                     break;

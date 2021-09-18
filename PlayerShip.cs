@@ -12,11 +12,14 @@ namespace SpaceInvaderJaMa.Model
 {
     class PlayerShip : BasicSpriteComponent
     {
+        #region Fields
+        public static List<Shot> bullets = new List<Shot>();
+        #endregion
+
         #region Properties
         private float Speed { get; set; }
         private bool OnCooldown { get; set; }
         private float ShotDelay { get; set; }
-        public static List<Shot> bullets = new List<Shot>();
         #endregion
 
         #region Constructor
