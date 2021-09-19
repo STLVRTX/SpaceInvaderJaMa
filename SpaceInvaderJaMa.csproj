@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Barrier.cs" />
     <Compile Include="GameController.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="HUD.cs" />

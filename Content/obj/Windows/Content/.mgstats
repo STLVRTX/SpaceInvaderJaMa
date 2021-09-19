@@ -1,4 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Content/Barrier.xnb","TextureProcessor","Texture2DContent",165,1621,0.135635
 "C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/GameFont.spritefont","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Content/GameFont.xnb","FontDescriptionProcessor","SpriteFontContent",2021,21521,0.3540542
 "C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_00.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Content/InvaderA_00.xnb","TextureProcessor","Texture2DContent",1560,1621,0.651658
 "C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_01.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Content/InvaderA_01.xnb","TextureProcessor","Texture2DContent",1575,1621,0.0029833

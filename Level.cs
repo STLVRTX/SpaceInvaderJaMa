@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceInvaderJaMa.Model
+namespace SpaceInvaderJaMa
 {
     class Level
     {
@@ -14,6 +14,7 @@ namespace SpaceInvaderJaMa.Model
         private static PlayerShip playerShip;
         private static int[] size = { 11, 5 };
         public static List<Invader> invaders = new List<Invader>();
+        public static List<Barrier> barriers = new List<Barrier>();
         #endregion
 
         #region Properties
@@ -29,6 +30,7 @@ namespace SpaceInvaderJaMa.Model
             Enemies = new Invader[size[0] * size[1]];
             CreatePlayerShip();
             CreateInvaders();
+            CreateBarriers();
         }
         #endregion
 
@@ -52,6 +54,16 @@ namespace SpaceInvaderJaMa.Model
                     invaders.Add(Enemies[index]);
                     Game.Components.Add(Enemies[index]);
                 }
+            }
+        }
+
+        private void CreateBarriers()
+        {
+            for(int i = 0; i < 4; i++)
+            {
+                Barrier b = new Barrier(Game, "Barrier" + i, Game.Content.Load<Texture2D>("Barrier"), new Vector2((i+1)*100, 600));
+                Game.Components.Add(b);
+                barriers.Add(b);
             }
         }
 

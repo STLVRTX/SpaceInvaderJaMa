@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier.png</File>
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/GameFont.spritefont</File>
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_00.png</File>
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_01.png</File>
@@ -15,6 +16,7 @@
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/Ship.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

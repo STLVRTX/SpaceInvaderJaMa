@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceInvaderJaMa.Model
+namespace SpaceInvaderJaMa
 {
-    public class Shot : BasicSpriteComponent
+    class Shot : BasicSpriteComponent
     {
         #region Properties
         public float Speed
@@ -30,6 +30,7 @@ namespace SpaceInvaderJaMa.Model
         public bool OutOfFrame()
         {
             if(Position.Y <= 200) { Game.Components.Remove(this); return true;}
+            else if(Position.Y >= 1000) { Game.Components.Remove(this); return true;}
             return false;
         }
         #endregion

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceInvaderJaMa.Model
+namespace SpaceInvaderJaMa
 {
     class Invader : BasicSpriteComponent
     {
@@ -94,8 +94,13 @@ namespace SpaceInvaderJaMa.Model
                     invaderCanShoot = true;
                 }
 
-                foreach(Shot s in invaderShots)
+                foreach(Shot s in invaderShots.ToArray())
                 {
+                    if (s.OutOfFrame())
+                    {
+                        invaderShots.Remove(s);
+                        Game.Components.Remove(s);
+                    }
                     s.Position -= Up * (float) gameTime.ElapsedGameTime.TotalSeconds * 3f;
                 }
             }

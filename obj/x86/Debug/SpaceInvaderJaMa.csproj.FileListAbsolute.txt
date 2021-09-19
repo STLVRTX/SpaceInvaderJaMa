@@ -177,3 +177,4 @@ C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\obj\x86\Debug\SpaceInvaderJaMa.
 C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\obj\x86\Debug\SpaceInvaderJaMa.exe
 C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\obj\x86\Debug\SpaceInvaderJaMa.pdb
 C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\GameFont.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier.xnb
