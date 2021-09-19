@@ -43,6 +43,7 @@ namespace SpaceInvaderJaMa.Model
                 {
                     s.Position += Up * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
                 }
+                DetectCollision();
             }  
         }
 
@@ -93,6 +94,7 @@ namespace SpaceInvaderJaMa.Model
                     Invader.invaderShots.Remove(s);
                     //reduce hp
                     Game.Components.Remove(s);
+                    GameState.CurrentGameState = "Game Over";
                 }
             }
         }

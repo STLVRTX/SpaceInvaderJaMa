@@ -59,7 +59,7 @@ namespace SpaceInvaderJaMa.Model
         {
             foreach(Invader i in invaders)
             {
-                if (i.Position.X >= Game.GraphicsDevice.Viewport.Width * 0.95f && Invader.DirRight)
+                if (i.Position.X >= Game.GraphicsDevice.Viewport.Width * 0.88f && Invader.DirRight)
                 {
                     foreach(Invader ii in invaders)
                     {
@@ -69,7 +69,7 @@ namespace SpaceInvaderJaMa.Model
                     break;
                 }
 
-                if (i.Position.X <= Game.GraphicsDevice.Viewport.Width * 0.05f && !Invader.DirRight)
+                if (i.Position.X <= Game.GraphicsDevice.Viewport.Width * 0.07f && !Invader.DirRight)
                 {
                     foreach(Invader ii in invaders)
                     {

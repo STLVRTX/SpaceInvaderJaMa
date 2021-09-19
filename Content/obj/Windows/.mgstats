@@ -1,0 +1,10 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/GameFont.spritefont","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/GameFont.xnb","FontDescriptionProcessor","SpriteFontContent",2021,21521,0.3876531
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_00.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/InvaderA_00.xnb","TextureProcessor","Texture2DContent",1560,1621,0.2136406
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_01.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/InvaderA_01.xnb","TextureProcessor","Texture2DContent",1575,1621,0.0029915
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderB_00.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/InvaderB_00.xnb","TextureProcessor","Texture2DContent",1609,1621,0.0029923
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderB_01.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/InvaderB_01.xnb","TextureProcessor","Texture2DContent",1617,1621,0.0039892
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderC_00.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/InvaderC_00.xnb","TextureProcessor","Texture2DContent",1583,1621,0.0029918
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderC_01.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/InvaderC_01.xnb","TextureProcessor","Texture2DContent",1586,1621,0.0059848
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderShot.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/InvaderShot.xnb","TextureProcessor","Texture2DContent",113,197,0.0029918
+"C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/Ship.png","C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Ship.xnb","TextureProcessor","Texture2DContent",1426,2005,0.0039889
