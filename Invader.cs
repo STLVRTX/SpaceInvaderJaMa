@@ -16,7 +16,7 @@ namespace SpaceInvaderJaMa
         private static float speed;
         private float tempTime = 0;
         private bool animSwitch = true;
-        public Shot shot;
+        public Shot invaderShot;
         #endregion
 
         #region Properties
@@ -56,12 +56,12 @@ namespace SpaceInvaderJaMa
         {
             Level = level;
             InternPos = internPos;
-            AnimationDelay = 200;
+            AnimationDelay = 400;
             Speed = 15;
             Spacing = 15;
             StartPos = new Vector2(game.GraphicsDevice.Viewport.Width * 0.15f, game.GraphicsDevice.Viewport.Height * 0.1f);
             DirRight = true;
-            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), Position, Level);
+            invaderShot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), Position, Level);
             CalcPosition();
         }
         #endregion
@@ -79,7 +79,7 @@ namespace SpaceInvaderJaMa
         {
             if(GameState.CurrentGameState == "Game")
             {
-                shot.Position = Position;
+                invaderShot.Position = Position;
                 MoveInvader(gameTime);
                 Animation(gameTime);
                 DetectCollision();
@@ -137,7 +137,12 @@ namespace SpaceInvaderJaMa
                         case 3: Speed += 10; break;
                         case 1: Speed += 12; break;
                     }
-                    GameController.Score += 50;
+                    switch (Name)
+                    {
+                        case "InvaderA": GameController.Score += 50; break; 
+                        case "InvaderB": GameController.Score += 100; break;
+                        case "InvaderC": GameController.Score += 250; break;
+                    }
                     switch (GameController.Score)
                     {
                         case 500: GameController.ShotDelay -= 50; break;
@@ -145,6 +150,9 @@ namespace SpaceInvaderJaMa
                         case 1500: GameController.ShotDelay -= 50; break;
                         case 2000: GameController.ShotDelay -= 50; break;
                         case 2500: GameController.ShotDelay -= 50; break;
+                        case 3000: GameController.ShotDelay -= 50; break;
+                        case 3500: GameController.ShotDelay -= 100; break;
+                        case 4000: GameController.ShotDelay -= 100; break;
                     }
                 }
             }

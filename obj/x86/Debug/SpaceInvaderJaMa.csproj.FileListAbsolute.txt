@@ -221,3 +221,4 @@ C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Co
 C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage3.xnb
 C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage4.xnb
 C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\GameFont.xnb
+C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Sheet.xnb

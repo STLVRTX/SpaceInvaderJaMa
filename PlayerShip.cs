@@ -14,7 +14,7 @@ namespace SpaceInvaderJaMa
     {
         #region Fields
         public static List<Shot> bullets = new List<Shot>();
-        public Shot shot;
+        public Shot playerShot;
         #endregion
 
         #region Properties
@@ -35,7 +35,7 @@ namespace SpaceInvaderJaMa
             OnCooldown = false;
             ShotDelay = 750;
             Level = level;
-            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition, Level);
+            playerShot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition, Level);
         }
         #endregion
 
@@ -74,7 +74,7 @@ namespace SpaceInvaderJaMa
             {
                 if (!OnCooldown)
                 {
-                    Shot s = shot.CopyShot();
+                    Shot s = playerShot.CopyShot();
                     s.Position = new Vector2(CenterPosition.X, CenterPosition.Y - 10);
                     Game.Components.Add(s);
                     bullets.Add(s);

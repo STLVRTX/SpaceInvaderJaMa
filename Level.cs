@@ -59,7 +59,14 @@ namespace SpaceInvaderJaMa
                     //Enemies[index] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y), this);
                     //Invaders.Add(Enemies[index]);
                     //Game.Components.Add(Enemies[index]);
-                    Enemies[x,y] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y), this);
+                    switch (y)
+                    {
+                        case 4: Enemies[x, y] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y), this); break;
+                        case 3: Enemies[x, y] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y), this); break;
+                        case 2: Enemies[x, y] = new Invader(Game, "InvaderB", Game.Content.Load<Texture2D>("InvaderB_00"), new Vector2(x, y), this); break;
+                        case 1: Enemies[x, y] = new Invader(Game, "InvaderB", Game.Content.Load<Texture2D>("InvaderB_00"), new Vector2(x, y), this); break;
+                        case 0: Enemies[x, y] = new Invader(Game, "InvaderC", Game.Content.Load<Texture2D>("InvaderC_00"), new Vector2(x, y), this); break;
+                    }
                     Invaders.Add(Enemies[x,y]);
                     Game.Components.Add(Enemies[x,y]);
                 }

@@ -14,7 +14,7 @@ namespace SpaceInvaderJaMa
     {
         #region Properties
         public int Hp { get; set; }
-        public Level Level {  get; set; }
+        public Level Level { get; set; }
         #endregion
 
         #region Constructor
@@ -30,10 +30,15 @@ namespace SpaceInvaderJaMa
         #region Methods
         public override void Update(GameTime gameTime)
         {
-            if(Hp <= 0)
+            switch (Hp)
             {
-                Level.Barriers.Remove(this);
-                Game.Components.Remove(this);
+                case 5: break;
+                case 4: Texture = Game.Content.Load<Texture2D>("Barrier_Damage1"); break;
+                case 3: Texture = Game.Content.Load<Texture2D>("Barrier_Damage2"); break;
+                case 2: Texture = Game.Content.Load<Texture2D>("Barrier_Damage3"); break;
+                case 1: Texture = Game.Content.Load<Texture2D>("Barrier_Damage4"); break;
+                case 0: Level.Barriers.Remove(this); Game.Components.Remove(this); break;
+
             }
             DetectCollision();
         }
@@ -47,7 +52,7 @@ namespace SpaceInvaderJaMa
                     {
                         PlayerShip.bullets.Remove(s);
                         Game.Components.Remove(s);
-                    } 
+                    }
                 }
                 foreach (Shot s in Level.InvaderShots.ToArray())
                 {
