@@ -11,7 +11,8 @@ namespace SpaceInvaderJaMa
     class Level
     {
         #region Properties
-        public static Invader[] Enemies { get; set; }
+        //public static Invader[] Enemies { get; set; }
+        public static Invader[,] Enemies { get; set; }
         public Game Game { get; set; }
         public PlayerShip PlayerShip { get; set; }
         public List<Invader> Invaders { get; set; }
@@ -19,8 +20,6 @@ namespace SpaceInvaderJaMa
         public int[] Size { get; private set; }
         public List<Invader> ShootingInvaders { get; set; }
         public List<Shot> InvaderShots { get; set; }
-        public float InvaderShotDelay {  get; set; }
-        public bool InvaderCanShoot {  get; set; }
         #endregion
 
         #region Constructor
@@ -28,16 +27,16 @@ namespace SpaceInvaderJaMa
         {
             Game = game;
             Size = new int[] { 11, 5 };
-            Enemies = new Invader[Size[0] * Size[1]];
+            //Enemies = new Invader[Size[0] * Size[1]];
+            Enemies = new Invader[Size[0], Size[1]];
             Invaders = new List<Invader>();
             Barriers = new List<Barrier>();
             ShootingInvaders = new List<Invader>();
             InvaderShots = new List<Shot>();
-            InvaderShotDelay = 500;
-            InvaderCanShoot = true;
             CreatePlayerShip();
             CreateInvaders();
             CreateBarriers();
+            FindLowestInvaderRow();
         }
         #endregion
 
@@ -51,15 +50,18 @@ namespace SpaceInvaderJaMa
 
         private void CreateInvaders()
         {
-            int index;
+            //int index;
             for (int y = 0; y < Size[1]; y++)
             {
                 for (int x = 0; x < Size[0]; x++)
                 {
-                    index = x + (y * Size[0]);
-                    Enemies[index] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y), this);
-                    Invaders.Add(Enemies[index]);
-                    Game.Components.Add(Enemies[index]);
+                    //index = x + (y * Size[0]);
+                    //Enemies[index] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y), this);
+                    //Invaders.Add(Enemies[index]);
+                    //Game.Components.Add(Enemies[index]);
+                    Enemies[x,y] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y), this);
+                    Invaders.Add(Enemies[x,y]);
+                    Game.Components.Add(Enemies[x,y]);
                 }
             }
         }
@@ -103,7 +105,8 @@ namespace SpaceInvaderJaMa
 
         public void FindLowestInvaderRow()
         {
-            int index;
+            ShootingInvaders.Clear();
+            /*int index;
             for (int i = Size[0]; i > 0; i--)
             {
                 for (int j = Size[1]; j > 0; j--)
@@ -115,16 +118,28 @@ namespace SpaceInvaderJaMa
                         break;
                     }
                 }
+            }*/
+
+            for(int i = 0; i < Size[0]; i++)
+            {
+                for(int j = Size[1]-1; j > 0; j--)
+                {
+                    if(Enemies[i,j] != null && !ShootingInvaders.Contains(Enemies[i,j]) && Invaders.Contains(Enemies[i,j]))
+                    {
+                        ShootingInvaders.Add(Enemies[i,j]);
+                        break;
+                    }
+                }
             }
         }
 
 
-        public void ShootDelay(GameTime gameTime)
+        /*public void ShootDelay(GameTime gameTime)
         {
             if (InvaderCanShoot)
             {
                 InvaderShot();
-                InvaderShotDelay = 5000;
+                InvaderShotDelay = 500;
                 InvaderCanShoot = false;
             }
             else
@@ -140,10 +155,7 @@ namespace SpaceInvaderJaMa
                 return;
             int random = new Random().Next(0, ShootingInvaders.Count - 1);
             ShootingInvaders[random].Shoot();
-        }
-
-
-
+        }*/
         #endregion
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier.png</SourceFile>
-  <SourceTime>2021-09-20T09:42:17.6911895+02:00</SourceTime>
-  <DestFile>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Content/Barrier.xnb</DestFile>
-  <DestTime>2021-09-20T14:41:52.5204213+02:00</DestTime>
+  <SourceFile>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/Barrier.png</SourceFile>
+  <SourceTime>2021-09-20T17:37:22.4398881+02:00</SourceTime>
+  <DestFile>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/bin/Windows/Content/Barrier.xnb</DestFile>
+  <DestTime>2021-09-20T17:42:51.6297919+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -22,7 +22,7 @@ namespace SpaceInvaderJaMa
         {
             Position = pos;
             Level = level;
-            Scale = new Vector2(3, 3);
+            Scale = new Vector2(2.5f, 2.5f);
             Hp = 5;
         }
         #endregion

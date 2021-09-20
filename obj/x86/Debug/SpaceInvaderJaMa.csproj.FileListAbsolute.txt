@@ -215,3 +215,9 @@ C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Ba
 C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage2.xnb
 C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage3.xnb
 C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage4.xnb
+C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier.xnb
+C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage1.xnb
+C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage2.xnb
+C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage3.xnb
+C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage4.xnb
+C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\GameFont.xnb

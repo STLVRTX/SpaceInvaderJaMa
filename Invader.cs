@@ -83,7 +83,6 @@ namespace SpaceInvaderJaMa
                 MoveInvader(gameTime);
                 Animation(gameTime);
                 DetectCollision();
-                Level.ShootDelay(gameTime);
             }
         }
 
@@ -130,7 +129,23 @@ namespace SpaceInvaderJaMa
                     Game.Components.Remove(s);
                     Game.Components.Remove(this);
                     Level.FindLowestInvaderRow();
+                    switch (Level.Invaders.Count)
+                    {
+                        case 25: Speed += 3; break;
+                        case 15: Speed += 5; break;
+                        case 5: Speed += 7; break;
+                        case 3: Speed += 10; break;
+                        case 1: Speed += 12; break;
+                    }
                     GameController.Score += 50;
+                    switch (GameController.Score)
+                    {
+                        case 500: GameController.ShotDelay -= 50; break;
+                        case 1000: GameController.ShotDelay -= 50; break;
+                        case 1500: GameController.ShotDelay -= 50; break;
+                        case 2000: GameController.ShotDelay -= 50; break;
+                        case 2500: GameController.ShotDelay -= 50; break;
+                    }
                 }
             }
         }

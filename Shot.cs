@@ -12,19 +12,16 @@ namespace SpaceInvaderJaMa
     class Shot : BasicSpriteComponent
     {
         #region Properties
-        public float Speed
-        {
-            get; set;
-        }
+        public float Speed { get; set; }
 
-        public Level Level {  get; set; }
+        public Level Level { get; set; }
         #endregion
 
         #region Constructor
-        public Shot(Game game, string name, Texture2D image, Vector2 shipPosition, Level level) : base(game, name, image)
+        public Shot(Game game, string name, Texture2D image, Vector2 position, Level level) : base(game, name, image)
         {
             Speed = 200f;
-            Position = new Vector2(shipPosition.X, shipPosition.Y-12);
+            Position = new Vector2(position.X, position.Y);
             Level = level;
         }
         #endregion
