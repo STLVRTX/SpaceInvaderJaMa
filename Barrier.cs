@@ -12,29 +12,34 @@ namespace SpaceInvaderJaMa
 {
     class Barrier : BasicSpriteComponent
     {
+        #region Properties
         public int Hp { get; set; }
+        public Level Level {  get; set; }
+        #endregion
 
-
-        public Barrier(Game game, string name, Texture2D image, Vector2 pos) : base(game, name, image)
+        #region Constructor
+        public Barrier(Game game, string name, Texture2D image, Vector2 pos, Level level) : base(game, name, image)
         {
             Position = pos;
+            Level = level;
             Scale = new Vector2(2, 2);
             Hp = 5;
         }
+        #endregion
 
+        #region Methods
         public override void Update(GameTime gameTime)
         {
             if(Hp <= 0)
             {
-                Level.barriers.Remove(this);
+                Level.Barriers.Remove(this);
                 Game.Components.Remove(this);
             }
             DetectCollision();
         }
-
         public void DetectCollision()
         {
-            foreach (Barrier b in Level.barriers)
+            foreach (Barrier b in Level.Barriers)
             {
                 foreach (Shot s in PlayerShip.bullets.ToArray())
                 {
@@ -42,7 +47,7 @@ namespace SpaceInvaderJaMa
                     {
                         PlayerShip.bullets.Remove(s);
                         Game.Components.Remove(s);
-                    }
+                    } 
                 }
                 foreach (Shot s in Invader.invaderShots.ToArray())
                 {
@@ -51,9 +56,11 @@ namespace SpaceInvaderJaMa
                         Invader.invaderShots.Remove(s);
                         Game.Components.Remove(s);
                         Hp--;
+                        return;
                     }
                 }
             }
         }
+        #endregion
     }
 }

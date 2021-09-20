@@ -18,6 +18,7 @@ namespace SpaceInvaderJaMa
 
         #region Properties
         private float Speed { get; set; }
+        private float ShotSpeed { get; set; }
         private bool OnCooldown { get; set; }
         private float ShotDelay { get; set; }
         #endregion
@@ -26,6 +27,7 @@ namespace SpaceInvaderJaMa
         public PlayerShip(Game game, string name, Texture2D image) : base(game, name, image)
         {
             Speed = 200;
+            ShotSpeed = 500;
             Position = new Vector2((int)(game.GraphicsDevice.Viewport.Width * 0.1), (int)(game.GraphicsDevice.Viewport.Height * 0.9));
             OnCooldown = false;
             ShotDelay = 750;
@@ -41,7 +43,7 @@ namespace SpaceInvaderJaMa
                 bullets.RemoveAll(s => s.OutOfFrame());
                 foreach (Shot s in bullets)
                 {
-                    s.Position += Up * (float)gameTime.ElapsedGameTime.TotalSeconds * Speed;
+                    s.Position += Up * (float)gameTime.ElapsedGameTime.TotalSeconds * ShotSpeed;
                 }
                 DetectCollision();
             }  

@@ -7,9 +7,9 @@ namespace SpaceInvaderJaMa
 {
     public class GameController : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-        Level level;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        private Level level;
         private SpriteFont font;
         private static int score = 0;
 
@@ -51,10 +51,10 @@ namespace SpaceInvaderJaMa
                     break;
                 
                 case "Game":
-                    if(Level.invaders.Count == 0) { GameState.CurrentGameState = "Game Over"; }
+                    if(level.Invaders.Count == 0) { GameState.CurrentGameState = "Game Over"; }
                     if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                         GameState.CurrentGameState = "Paused";
-                    level.CheckMovement(gameTime);
+                    level.CheckMovement();
                     break;
                 
                 case "Paused":

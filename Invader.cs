@@ -16,10 +16,9 @@ namespace SpaceInvaderJaMa
         private static float speed;
         private float tempTime = 0;
         private bool animSwitch = true;
-        public static List<Invader> shootingInvaders = new List<Invader>();
-        public static List<Shot> invaderShots = new List<Shot>();
         private float invaderShotDelay = 500;
         private bool invaderCanShoot = true;
+        private Level level;
         #endregion
 
         #region Properties
@@ -51,11 +50,13 @@ namespace SpaceInvaderJaMa
         public static Vector2 StartPos {  get; set; }
         public static bool DirRight {  get; set; }
         public static float AnimationDelay {  get; set; }
+        public Level Level {  get; set; }
         #endregion
 
         #region Constructor
-        public Invader(Game game, string name, Texture2D image, Vector2 internPos) : base(game, name, image)
+        public Invader(Game game, string name, Texture2D image, Vector2 internPos, Level level) : base(game, name, image)
         {
+            Level = level;
             InternPos = internPos;
             AnimationDelay = 200;
             Speed = 15;
@@ -143,7 +144,7 @@ namespace SpaceInvaderJaMa
                 if (new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Size.X, this.Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
                 {
                     PlayerShip.bullets.Remove(s);
-                    Level.invaders.Remove(this);
+                    Level.Invaders.Remove(this);
                     shootingInvaders.Remove(this);
                     Game.Components.Remove(s);
                     Game.Components.Remove(this);
@@ -166,24 +167,6 @@ namespace SpaceInvaderJaMa
                 return;
             int random = new Random().Next(0, shootingInvaders.Count-1);
             shootingInvaders[random].Shoot();
-        }
-
-        public static void FindLowestInvaderRow()
-        {
-            for(int i = 0; i < 11; i++)
-            {
-                float minY = 0;
-                for (int j = 0; j < 5; j++)
-                {
-                    if (Level.Enemies[j].Position.Y > minY)
-                    {
-                        minY = Level.Enemies[j].Position.Y;
-                    }
-                    List<Invader> temp = Level.invaders.FindAll(x => x.Position.Y == minY);
-                    foreach (Invader inv in temp) { shootingInvaders.Add(inv); }
-
-                }     
-            }
         }
         #endregion
     }
