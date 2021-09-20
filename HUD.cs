@@ -11,17 +11,25 @@ namespace SpaceInvaderJaMa
 {
     class HUD : Game
     {
+        #region Fields
         private SpriteFont font;
         private int score = 0;
+        #endregion
+
+        #region Properties
         public SpriteBatch SpriteBatch { get; set; }
         public Game Game { get; set; }
+        #endregion
 
+        #region Constructors
         public HUD(Game game, SpriteBatch spriteBatch)
         {
             Game = game;
             SpriteBatch = spriteBatch;
         }
+        #endregion
 
+        #region Methods
         protected override void LoadContent()
         {
             font = Content.Load<SpriteFont>("GameFont");
@@ -40,5 +48,6 @@ namespace SpaceInvaderJaMa
         {
             score++;
         }
+        #endregion
     }
 }

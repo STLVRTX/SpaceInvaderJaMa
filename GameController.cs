@@ -7,13 +7,18 @@ namespace SpaceInvaderJaMa
 {
     public class GameController : Game
     {
+        #region Fields
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private Level level;
         private SpriteFont font;
+        #endregion
 
+        #region Properties
         public static int Score { get; set; }
+        #endregion
 
+        #region Constructors
         public GameController()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -21,7 +26,9 @@ namespace SpaceInvaderJaMa
             graphics.PreferredBackBufferHeight = 700;
             Content.RootDirectory = "Content";
         }
+        #endregion
 
+        #region Methods
         protected override void Initialize()
         {
             GameState.CurrentGameState = "Menu";
@@ -82,5 +89,6 @@ namespace SpaceInvaderJaMa
             spriteBatch.End();
             base.Draw(gameTime);
         }
+        #endregion
     }
 }

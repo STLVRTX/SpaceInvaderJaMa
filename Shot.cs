@@ -26,10 +26,12 @@ namespace SpaceInvaderJaMa
         }
         #endregion
 
+        #region
         public Shot CopyShot()
         {
             return (Shot)this.MemberwiseClone();
         }
+        #endregion
     }
 }
 

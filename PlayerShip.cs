@@ -14,9 +14,8 @@ namespace SpaceInvaderJaMa
     {
         #region Fields
         public static List<Shot> bullets = new List<Shot>();
-        #endregion
-
         public Shot shot;
+        #endregion
 
         #region Properties
         private float Speed { get; set; }

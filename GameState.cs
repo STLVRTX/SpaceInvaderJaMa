@@ -11,8 +11,11 @@ namespace SpaceInvaderJaMa
 {
     class GameState
     {
+        #region Fields
         private static string currentGameState;
+        #endregion
 
+        #region Properties
         public static string CurrentGameState
         {
             get { return currentGameState; }
@@ -27,10 +30,13 @@ namespace SpaceInvaderJaMa
                 }
             }
         }
+        #endregion
 
+        #region Constructors
         public GameState()
         {
             currentGameState = "Menu";
         }
+        #endregion
     }
 }
