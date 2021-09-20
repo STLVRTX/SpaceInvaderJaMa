@@ -128,6 +128,12 @@
 /processorParam:TextureFormat=Color
 /build:InvaderB_01.png
 
+#begin InvaderBullet.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:InvaderBullet.wav
+
 #begin InvaderC_00.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -152,6 +158,12 @@
 /processorParam:TextureFormat=Color
 /build:InvaderC_01.png
 
+#begin InvaderHit.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:InvaderHit.wav
+
 #begin InvaderShot.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -175,4 +187,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Ship.png
+
+#begin ShipBullet.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ShipBullet.wav
+
+#begin ShipHit.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ShipHit.wav
 

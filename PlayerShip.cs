@@ -22,13 +22,14 @@ namespace SpaceInvaderJaMa
         private float ShotSpeed { get; set; }
         private bool OnCooldown { get; set; }
         private float ShotDelay { get; set; }
-
+        public int Hp { get; set; }
         public Level Level { get; set; }
         #endregion
 
         #region Constructor
         public PlayerShip(Game game, string name, Texture2D image, Level level) : base(game, name, image)
         {
+            Hp = 3;
             Speed = 200;
             ShotSpeed = 500;
             Position = new Vector2((int)(game.GraphicsDevice.Viewport.Width * 0.1), (int)(game.GraphicsDevice.Viewport.Height * 0.9));
@@ -80,6 +81,7 @@ namespace SpaceInvaderJaMa
                     bullets.Add(s);
                     OnCooldown = true;
                     ShotDelay = 750;
+                    GameController.PlayerBullet.Play(0.1f, 0, 0);
                 }
             }
 
@@ -99,10 +101,14 @@ namespace SpaceInvaderJaMa
             {
                 if (new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Size.X, this.Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
                 {
+                    GameController.PlayerHit.Play(0.25f, 0, 0);
                     Level.InvaderShots.Remove(s);
-                    //reduce hp
                     Game.Components.Remove(s);
-                    GameState.CurrentGameState = "Game Over";
+                    Hp--;
+                    if(Hp <= 0)
+                    {
+                        GameState.CurrentGameState = "Game Over";
+                    }
                 }
             }
         }

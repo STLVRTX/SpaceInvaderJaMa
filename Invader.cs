@@ -123,6 +123,7 @@ namespace SpaceInvaderJaMa
             {
                 if (new Rectangle((int)Position.X, (int)Position.Y, Size.X, Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
                 {
+                    GameController.InvaderHit.Play(0.1f, 0, 0);
                     Level.ShootingInvaders.Remove(this);
                     PlayerShip.bullets.Remove(s);
                     Level.Invaders.Remove(this);
@@ -162,6 +163,7 @@ namespace SpaceInvaderJaMa
             Shot s = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), new Vector2(Position.X + (Size.X/2), Position.Y + (Size.Y/2)), Level);
             Game.Components.Add(s);
             Level.InvaderShots.Add(s);
+            GameController.InvaderBullet.Play(0.05f, 0, 0);
         }
         #endregion
     }

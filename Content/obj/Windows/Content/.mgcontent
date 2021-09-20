@@ -14,12 +14,20 @@
     <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/InvaderA_01.png</File>
     <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/InvaderB_00.png</File>
     <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/InvaderB_01.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/InvaderBullet.wav</File>
     <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/InvaderC_00.png</File>
     <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/InvaderC_01.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/InvaderHit.wav</File>
     <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/InvaderShot.png</File>
     <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/Ship.png</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/ShipBullet.wav</File>
+    <File>C:/Users/Seraph/Source/Repos/SirBloody/SpaceInvaderJaMa/Content/ShipHit.wav</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
