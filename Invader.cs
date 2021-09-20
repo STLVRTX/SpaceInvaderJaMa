@@ -61,7 +61,7 @@ namespace SpaceInvaderJaMa
             Spacing = 15;
             StartPos = new Vector2(game.GraphicsDevice.Viewport.Width * 0.15f, game.GraphicsDevice.Viewport.Height * 0.1f);
             DirRight = true;
-            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), Position);
+            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), Position, Level);
             CalcPosition();
         }
         #endregion
@@ -84,16 +84,6 @@ namespace SpaceInvaderJaMa
                 Animation(gameTime);
                 DetectCollision();
                 Level.ShootDelay(gameTime);
-
-                foreach(Shot s in Level.InvaderShots.ToArray())
-                {
-                    if (s.Position.Y >= 666)
-                    {
-                        Level.InvaderShots.Remove(s);
-                        Game.Components.Remove(s);
-                    }
-                    s.Position -= Up * (float) gameTime.ElapsedGameTime.TotalSeconds * 3f;
-                }
             }
         }
 
@@ -134,9 +124,9 @@ namespace SpaceInvaderJaMa
             {
                 if (new Rectangle((int)Position.X, (int)Position.Y, Size.X, Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
                 {
+                    Level.ShootingInvaders.Remove(this);
                     PlayerShip.bullets.Remove(s);
                     Level.Invaders.Remove(this);
-                    Level.ShootingInvaders.Remove(this);
                     Game.Components.Remove(s);
                     Game.Components.Remove(this);
                     Level.FindLowestInvaderRow();
@@ -146,7 +136,7 @@ namespace SpaceInvaderJaMa
         }
         public void Shoot()
         {
-            Shot s = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), Position);
+            Shot s = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), new Vector2(Position.X + (Size.X/2), Position.Y + (Size.Y/2)), Level);
             Game.Components.Add(s);
             Level.InvaderShots.Add(s);
         }

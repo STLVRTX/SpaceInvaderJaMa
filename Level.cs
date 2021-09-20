@@ -103,13 +103,15 @@ namespace SpaceInvaderJaMa
 
         public void FindLowestInvaderRow()
         {
-            for (int i = 0; i < Size[0]; i++)
+            int index;
+            for (int i = Size[0]; i > 0; i--)
             {
                 for (int j = Size[1]; j > 0; j--)
                 {
-                    if(Enemies[i+j] != null)
+                    index = (i-1) + ((j-1)  * Size[0]);
+                    if (Enemies[index] != null)
                     {
-                        ShootingInvaders.Add(Enemies[i + j]);
+                        ShootingInvaders.Add(Enemies[index]);
                         break;
                     }
                 }

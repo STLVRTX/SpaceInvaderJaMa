@@ -35,7 +35,7 @@ namespace SpaceInvaderJaMa
             OnCooldown = false;
             ShotDelay = 750;
             Level = level;
-            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition);
+            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition, Level);
         }
         #endregion
 
