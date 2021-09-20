@@ -16,8 +16,6 @@ namespace SpaceInvaderJaMa
         private static float speed;
         private float tempTime = 0;
         private bool animSwitch = true;
-        private float invaderShotDelay = 500;
-        private bool invaderCanShoot = true;
         public Shot shot;
         #endregion
 
@@ -63,7 +61,7 @@ namespace SpaceInvaderJaMa
             Spacing = 15;
             StartPos = new Vector2(game.GraphicsDevice.Viewport.Width * 0.15f, game.GraphicsDevice.Viewport.Height * 0.1f);
             DirRight = true;
-            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition);
+            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), Position);
             CalcPosition();
         }
         #endregion
@@ -81,20 +79,11 @@ namespace SpaceInvaderJaMa
         {
             if(GameState.CurrentGameState == "Game")
             {
+                shot.Position = Position;
                 MoveInvader(gameTime);
                 Animation(gameTime);
                 DetectCollision();
-                if (invaderCanShoot)
-                {
-                    InvaderShot();
-                    invaderShotDelay = 500;
-                    invaderCanShoot = false;
-                }   
-                else { invaderShotDelay -= (float) gameTime.ElapsedGameTime.TotalMilliseconds; }
-                if(invaderShotDelay <= 0)
-                {
-                    invaderCanShoot = true;
-                }
+                Level.ShootDelay(gameTime);
 
                 foreach(Shot s in Level.InvaderShots.ToArray())
                 {
@@ -107,6 +96,7 @@ namespace SpaceInvaderJaMa
                 }
             }
         }
+
 
         private void MoveInvader(GameTime gameTime)
         {
@@ -142,7 +132,7 @@ namespace SpaceInvaderJaMa
         {
             foreach(Shot s in PlayerShip.bullets.ToArray())
             {
-                if (new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Size.X, this.Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
+                if (new Rectangle((int)Position.X, (int)Position.Y, Size.X, Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
                 {
                     PlayerShip.bullets.Remove(s);
                     Level.Invaders.Remove(this);
@@ -154,21 +144,11 @@ namespace SpaceInvaderJaMa
                 }
             }
         }
-
         public void Shoot()
         {
-            Shot s = shot.CopyShot();
-            s.Position = CenterPosition;
+            Shot s = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), Position);
             Game.Components.Add(s);
             Level.InvaderShots.Add(s);
-        }
-
-        public void InvaderShot()
-        {
-            if (Level.ShootingInvaders.Count == 0)
-                return;
-            int random = new Random().Next(0, Level.ShootingInvaders.Count-1);
-            Level.ShootingInvaders[random].Shoot();
         }
         #endregion
     }

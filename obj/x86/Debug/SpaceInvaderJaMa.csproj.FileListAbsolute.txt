@@ -211,3 +211,7 @@ C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\obj\x86\Debug\SpaceInvaderJaMa.c
 C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\obj\x86\Debug\SpaceInvaderJaMa.csproj.CoreCompileInputs.cache
 C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\obj\x86\Debug\SpaceInvaderJaMa.exe
 C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\obj\x86\Debug\SpaceInvaderJaMa.pdb
+C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage1.xnb
+C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage2.xnb
+C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage3.xnb
+C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage4.xnb

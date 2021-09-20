@@ -19,6 +19,8 @@ namespace SpaceInvaderJaMa
         public int[] Size { get; private set; }
         public List<Invader> ShootingInvaders { get; set; }
         public List<Shot> InvaderShots { get; set; }
+        public float InvaderShotDelay {  get; set; }
+        public bool InvaderCanShoot {  get; set; }
         #endregion
 
         #region Constructor
@@ -31,6 +33,8 @@ namespace SpaceInvaderJaMa
             Barriers = new List<Barrier>();
             ShootingInvaders = new List<Invader>();
             InvaderShots = new List<Shot>();
+            InvaderShotDelay = 500;
+            InvaderCanShoot = true;
             CreatePlayerShip();
             CreateInvaders();
             CreateBarriers();
@@ -99,21 +103,45 @@ namespace SpaceInvaderJaMa
 
         public void FindLowestInvaderRow()
         {
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < Size[0]; i++)
             {
-                float minY = 0;
-                for (int j = 0; j < 5; j++)
+                for (int j = Size[1]; j > 0; j--)
                 {
-                    if (Level.Enemies[j].Position.Y > minY)
+                    if(Enemies[i+j] != null)
                     {
-                        minY = Level.Enemies[j].Position.Y;
+                        ShootingInvaders.Add(Enemies[i + j]);
+                        break;
                     }
-                    List<Invader> temp = Invaders.FindAll(x => x.Position.Y == minY);
-                    foreach (Invader inv in temp) { ShootingInvaders.Add(inv); }
-
                 }
             }
         }
+
+
+        public void ShootDelay(GameTime gameTime)
+        {
+            if (InvaderCanShoot)
+            {
+                InvaderShot();
+                InvaderShotDelay = 5000;
+                InvaderCanShoot = false;
+            }
+            else
+                InvaderShotDelay -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (InvaderShotDelay <= 0)
+            {
+                InvaderCanShoot = true;
+            }
+        }
+        public void InvaderShot()
+        {
+            if (ShootingInvaders.Count == 0)
+                return;
+            int random = new Random().Next(0, ShootingInvaders.Count - 1);
+            ShootingInvaders[random].Shoot();
+        }
+
+
+
         #endregion
     }
 }
