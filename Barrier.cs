@@ -22,7 +22,7 @@ namespace SpaceInvaderJaMa
         {
             Position = pos;
             Level = level;
-            Scale = new Vector2(2, 2);
+            Scale = new Vector2(3, 3);
             Hp = 5;
         }
         #endregion
@@ -49,11 +49,11 @@ namespace SpaceInvaderJaMa
                         Game.Components.Remove(s);
                     } 
                 }
-                foreach (Shot s in Invader.invaderShots.ToArray())
+                foreach (Shot s in Level.InvaderShots.ToArray())
                 {
                     if (new Rectangle((int)Position.X, (int)Position.Y, Size.X, Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
                     {
-                        Invader.invaderShots.Remove(s);
+                        Level.InvaderShots.Remove(s);
                         Game.Components.Remove(s);
                         Hp--;
                         return;

@@ -40,7 +40,7 @@ namespace SpaceInvaderJaMa
         #region Methods
         private PlayerShip CreatePlayerShip()
         {
-            PlayerShip = new PlayerShip(Game, "PlayerShip", Game.Content.Load<Texture2D>("Ship"));
+            PlayerShip = new PlayerShip(Game, "PlayerShip", Game.Content.Load<Texture2D>("Ship"), this);
             Game.Components.Add(PlayerShip);
             return PlayerShip;
         }
@@ -64,7 +64,7 @@ namespace SpaceInvaderJaMa
         {
             for (int i = 0; i < 4; i++)
             {
-                Barrier b = new Barrier(Game, "Barrier" + i, Game.Content.Load<Texture2D>("Barrier"), new Vector2((i + 1) * 100, 600), this);
+                Barrier b = new Barrier(Game, "Barrier" + i, Game.Content.Load<Texture2D>("Barrier"), new Vector2(((i + 1) * 98) + i * 10, 500), this);
                 Game.Components.Add(b);
                 Barriers.Add(b);
             }
@@ -109,7 +109,7 @@ namespace SpaceInvaderJaMa
                         minY = Level.Enemies[j].Position.Y;
                     }
                     List<Invader> temp = Invaders.FindAll(x => x.Position.Y == minY);
-                    foreach (Invader inv in temp) { shootingInvaders.Add(inv); }
+                    foreach (Invader inv in temp) { ShootingInvaders.Add(inv); }
 
                 }
             }

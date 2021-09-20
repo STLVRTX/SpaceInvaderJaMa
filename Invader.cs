@@ -18,7 +18,6 @@ namespace SpaceInvaderJaMa
         private bool animSwitch = true;
         private float invaderShotDelay = 500;
         private bool invaderCanShoot = true;
-        private Level level;
         #endregion
 
         #region Properties
@@ -61,7 +60,7 @@ namespace SpaceInvaderJaMa
             AnimationDelay = 200;
             Speed = 15;
             Spacing = 15;
-            StartPos = new Vector2(game.GraphicsDevice.Viewport.Width * 0.1f, game.GraphicsDevice.Viewport.Height * 0.3f);
+            StartPos = new Vector2(game.GraphicsDevice.Viewport.Width * 0.15f, game.GraphicsDevice.Viewport.Height * 0.1f);
             DirRight = true;
             CalcPosition();
         }
@@ -95,11 +94,11 @@ namespace SpaceInvaderJaMa
                     invaderCanShoot = true;
                 }
 
-                foreach(Shot s in invaderShots.ToArray())
+                foreach(Shot s in Level.InvaderShots.ToArray())
                 {
-                    if (s.OutOfFrame())
+                    if (s.Position.Y >= 770)
                     {
-                        invaderShots.Remove(s);
+                        Level.InvaderShots.Remove(s);
                         Game.Components.Remove(s);
                     }
                     s.Position -= Up * (float) gameTime.ElapsedGameTime.TotalSeconds * 3f;
@@ -145,10 +144,10 @@ namespace SpaceInvaderJaMa
                 {
                     PlayerShip.bullets.Remove(s);
                     Level.Invaders.Remove(this);
-                    shootingInvaders.Remove(this);
+                    Level.ShootingInvaders.Remove(this);
                     Game.Components.Remove(s);
                     Game.Components.Remove(this);
-                    FindLowestInvaderRow();
+                    Level.FindLowestInvaderRow();
                     GameController.Score += 50;
                 }
             }
@@ -158,15 +157,15 @@ namespace SpaceInvaderJaMa
         {
             Shot s = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition);
             Game.Components.Add(s);
-            invaderShots.Add(s);
+            Level.InvaderShots.Add(s);
         }
 
         public void InvaderShot()
         {
-            if (shootingInvaders.Count == 0)
+            if (Level.ShootingInvaders.Count == 0)
                 return;
-            int random = new Random().Next(0, shootingInvaders.Count-1);
-            shootingInvaders[random].Shoot();
+            int random = new Random().Next(0, Level.ShootingInvaders.Count-1);
+            Level.ShootingInvaders[random].Shoot();
         }
         #endregion
     }

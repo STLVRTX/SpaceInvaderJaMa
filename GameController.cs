@@ -11,7 +11,6 @@ namespace SpaceInvaderJaMa
         private SpriteBatch spriteBatch;
         private Level level;
         private SpriteFont font;
-        private static int score = 0;
 
         public static int Score { get; set; }
 
@@ -19,7 +18,7 @@ namespace SpaceInvaderJaMa
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 600;
-            graphics.PreferredBackBufferHeight = 800;
+            graphics.PreferredBackBufferHeight = 700;
             Content.RootDirectory = "Content";
         }
 
@@ -75,11 +74,11 @@ namespace SpaceInvaderJaMa
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             if (GameState.CurrentGameState == "Menu")
-                spriteBatch.DrawString(font, "Press Space to Play!", new Vector2(200, 500), Color.White);
+                spriteBatch.DrawString(font, "Press Space to Play!", new Vector2(200, 400), Color.White);
             else if (GameState.CurrentGameState == "Game" || GameState.CurrentGameState == "Paused")
-                spriteBatch.DrawString(font, "Score " + Score, new Vector2(100, 100), Color.White);
+                spriteBatch.DrawString(font, "Score " + Score, new Vector2(75, 30), Color.White);
             else if (GameState.CurrentGameState == "Game Over")
-                spriteBatch.DrawString(font, "Game Over!", new Vector2(200, 500), Color.White);
+                spriteBatch.DrawString(font, "Game Over!", new Vector2(200, 400), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

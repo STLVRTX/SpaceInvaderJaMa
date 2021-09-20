@@ -25,15 +25,6 @@ namespace SpaceInvaderJaMa
             Position = new Vector2(shipPosition.X, shipPosition.Y-12);
         }
         #endregion
-
-        #region Methods
-        public bool OutOfFrame()
-        {
-            if(Position.Y <= 200) { Game.Components.Remove(this); return true;}
-            else if(Position.Y >= 1000) { Game.Components.Remove(this); return true;}
-            return false;
-        }
-        #endregion
     }
 }
 
