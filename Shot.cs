@@ -25,6 +25,11 @@ namespace SpaceInvaderJaMa
             Position = new Vector2(shipPosition.X, shipPosition.Y-12);
         }
         #endregion
+
+        public Shot CopyShot()
+        {
+            return (Shot)this.MemberwiseClone();
+        }
     }
 }
 

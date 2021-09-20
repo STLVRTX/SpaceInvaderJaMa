@@ -16,6 +16,8 @@ namespace SpaceInvaderJaMa
         public static List<Shot> bullets = new List<Shot>();
         #endregion
 
+        public Shot shot;
+
         #region Properties
         private float Speed { get; set; }
         private float ShotSpeed { get; set; }
@@ -34,6 +36,7 @@ namespace SpaceInvaderJaMa
             OnCooldown = false;
             ShotDelay = 750;
             Level = level;
+            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition);
         }
         #endregion
 
@@ -45,7 +48,7 @@ namespace SpaceInvaderJaMa
                 Controls(gameTime);
                 foreach (Shot s in bullets.ToArray())
                 {
-                    if(s.Position.Y <= 200) { bullets.Remove(s); Game.Components.Remove(s); }
+                    if (s.Position.Y <= 50) { bullets.Remove(s); Game.Components.Remove(s); }
                     s.Position += Up * (float)gameTime.ElapsedGameTime.TotalSeconds * ShotSpeed;
                 }
                 DetectCollision();
@@ -72,7 +75,8 @@ namespace SpaceInvaderJaMa
             {
                 if (!OnCooldown)
                 {
-                    Shot s = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition);
+                    Shot s = shot.CopyShot();
+                    s.Position = new Vector2(CenterPosition.X, CenterPosition.Y - 10);
                     Game.Components.Add(s);
                     bullets.Add(s);
                     OnCooldown = true;

@@ -18,6 +18,7 @@ namespace SpaceInvaderJaMa
         private bool animSwitch = true;
         private float invaderShotDelay = 500;
         private bool invaderCanShoot = true;
+        public Shot shot;
         #endregion
 
         #region Properties
@@ -62,6 +63,7 @@ namespace SpaceInvaderJaMa
             Spacing = 15;
             StartPos = new Vector2(game.GraphicsDevice.Viewport.Width * 0.15f, game.GraphicsDevice.Viewport.Height * 0.1f);
             DirRight = true;
+            shot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition);
             CalcPosition();
         }
         #endregion
@@ -96,7 +98,7 @@ namespace SpaceInvaderJaMa
 
                 foreach(Shot s in Level.InvaderShots.ToArray())
                 {
-                    if (s.Position.Y >= 770)
+                    if (s.Position.Y >= 666)
                     {
                         Level.InvaderShots.Remove(s);
                         Game.Components.Remove(s);
@@ -155,7 +157,8 @@ namespace SpaceInvaderJaMa
 
         public void Shoot()
         {
-            Shot s = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition);
+            Shot s = shot.CopyShot();
+            s.Position = CenterPosition;
             Game.Components.Add(s);
             Level.InvaderShots.Add(s);
         }
