@@ -226,3 +226,12 @@ C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Co
 C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\InvaderHit.xnb
 C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipBullet.xnb
 C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipHit.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Sheet.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage1.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage2.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage3.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage4.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\InvaderBullet.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\InvaderHit.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipBullet.xnb
+C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipHit.xnb

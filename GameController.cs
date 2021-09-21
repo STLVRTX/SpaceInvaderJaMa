@@ -87,8 +87,6 @@ namespace SpaceInvaderJaMa
                     break;
 
                 case "Paused":
-                    if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-                        //Exit();
                         if (Keyboard.GetState().IsKeyDown(Keys.Space))
                             GameState.CurrentGameState = "Game";
                     break;
