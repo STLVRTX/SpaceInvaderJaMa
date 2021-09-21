@@ -14,9 +14,6 @@ namespace SpaceInvaderJaMa
         #region Fields
         private Vector2 internPos;
         private static float speed;
-        private float tempTime = 0;
-        private bool animSwitch = true;
-        public Shot invaderShot;
         #endregion
 
         #region Properties
@@ -49,6 +46,9 @@ namespace SpaceInvaderJaMa
         public static bool DirRight {  get; set; }
         public static float AnimationDelay {  get; set; }
         public Level Level {  get; set; }
+        public bool AnimSwitch {  get; set; }
+        public float TempTime {  get; set; }
+        public Shot InvaderShot { get; set; }
         #endregion
 
         #region Constructor
@@ -61,7 +61,9 @@ namespace SpaceInvaderJaMa
             Spacing = 15;
             StartPos = new Vector2(game.GraphicsDevice.Viewport.Width * 0.15f, game.GraphicsDevice.Viewport.Height * 0.1f);
             DirRight = true;
-            invaderShot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), Position, Level);
+            InvaderShot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), Position, Level);
+            AnimSwitch = true;
+            TempTime = 0;
             CalcPosition();
         }
         #endregion
@@ -74,19 +76,16 @@ namespace SpaceInvaderJaMa
 
             Position = new Vector2(x, y);
         }
-
         public override void Update(GameTime gameTime)
         {
             if(GameState.CurrentGameState == "Game")
             {
-                invaderShot.Position = Position;
+                InvaderShot.Position = Position;
                 MoveInvader(gameTime);
                 Animation(gameTime);
                 DetectCollision();
             }
         }
-
-
         private void MoveInvader(GameTime gameTime)
         {
             if (DirRight)
@@ -94,38 +93,36 @@ namespace SpaceInvaderJaMa
             else
                 Position -= Right * (float) gameTime.ElapsedGameTime.TotalSeconds * Speed;
         }
-
         private void Animation(GameTime gameTime)
         {
-            tempTime += (float) gameTime.ElapsedGameTime.TotalMilliseconds;
+            TempTime += (float) gameTime.ElapsedGameTime.TotalMilliseconds;
             
-            if(tempTime >= AnimationDelay)
+            if(TempTime >= AnimationDelay)
             {
                 string name = Texture.Name.Substring(0, Texture.Name.Length - 1);
-                if (animSwitch == true)
+                if (AnimSwitch == true)
                 {
                     Texture = Game.Content.Load<Texture2D>(name + "1");
-                    animSwitch = false;
+                    AnimSwitch = false;
                 }
                 else
                 {
                     Texture = Game.Content.Load<Texture2D>(name + "0");
-                    animSwitch = true;
+                    AnimSwitch = true;
                 }
 
-                tempTime -= tempTime;
+                TempTime -= TempTime;
             }
         }
-
-        public void DetectCollision()
+        private void DetectCollision()
         {
-            foreach(Shot s in PlayerShip.bullets.ToArray())
+            foreach(Shot s in PlayerShip.Bullets.ToArray())
             {
                 if (new Rectangle((int)Position.X, (int)Position.Y, Size.X, Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
                 {
                     GameController.InvaderHit.Play(0.1f, 0, 0);
                     Level.ShootingInvaders.Remove(this);
-                    PlayerShip.bullets.Remove(s);
+                    PlayerShip.Bullets.Remove(s);
                     Level.Invaders.Remove(this);
                     Game.Components.Remove(s);
                     Game.Components.Remove(this);

@@ -11,7 +11,6 @@ namespace SpaceInvaderJaMa
     class Level
     {
         #region Properties
-        //public static Invader[] Enemies { get; set; }
         public static Invader[,] Enemies { get; set; }
         public Game Game { get; set; }
         public PlayerShip PlayerShip { get; set; }
@@ -27,7 +26,6 @@ namespace SpaceInvaderJaMa
         {
             Game = game;
             Size = new int[] { 11, 5 };
-            //Enemies = new Invader[Size[0] * Size[1]];
             Enemies = new Invader[Size[0], Size[1]];
             Invaders = new List<Invader>();
             Barriers = new List<Barrier>();
@@ -47,18 +45,12 @@ namespace SpaceInvaderJaMa
             Game.Components.Add(PlayerShip);
             return PlayerShip;
         }
-
         private void CreateInvaders()
         {
-            //int index;
             for (int y = 0; y < Size[1]; y++)
             {
                 for (int x = 0; x < Size[0]; x++)
                 {
-                    //index = x + (y * Size[0]);
-                    //Enemies[index] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y), this);
-                    //Invaders.Add(Enemies[index]);
-                    //Game.Components.Add(Enemies[index]);
                     switch (y)
                     {
                         case 4: Enemies[x, y] = new Invader(Game, "InvaderA", Game.Content.Load<Texture2D>("InvaderA_00"), new Vector2(x, y), this); break;
@@ -72,7 +64,6 @@ namespace SpaceInvaderJaMa
                 }
             }
         }
-
         private void CreateBarriers()
         {
             for (int i = 0; i < 4; i++)
@@ -82,7 +73,6 @@ namespace SpaceInvaderJaMa
                 Barriers.Add(b);
             }
         }
-
         public void CheckMovement()
         {
             foreach (Invader i in Invaders)
@@ -109,23 +99,9 @@ namespace SpaceInvaderJaMa
             }
 
         }
-
         public void FindLowestInvaderRow()
         {
             ShootingInvaders.Clear();
-            /*int index;
-            for (int i = Size[0]; i > 0; i--)
-            {
-                for (int j = Size[1]; j > 0; j--)
-                {
-                    index = (i-1) + ((j-1)  * Size[0]);
-                    if (Enemies[index] != null)
-                    {
-                        ShootingInvaders.Add(Enemies[index]);
-                        break;
-                    }
-                }
-            }*/
 
             for(int i = 0; i < Size[0]; i++)
             {
@@ -139,30 +115,6 @@ namespace SpaceInvaderJaMa
                 }
             }
         }
-
-
-        /*public void ShootDelay(GameTime gameTime)
-        {
-            if (InvaderCanShoot)
-            {
-                InvaderShot();
-                InvaderShotDelay = 500;
-                InvaderCanShoot = false;
-            }
-            else
-                InvaderShotDelay -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (InvaderShotDelay <= 0)
-            {
-                InvaderCanShoot = true;
-            }
-        }
-        public void InvaderShot()
-        {
-            if (ShootingInvaders.Count == 0)
-                return;
-            int random = new Random().Next(0, ShootingInvaders.Count - 1);
-            ShootingInvaders[random].Shoot();
-        }*/
         #endregion
     }
 }

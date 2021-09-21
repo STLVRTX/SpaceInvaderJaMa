@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+<<<<<<< Updated upstream
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier.png</File>
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier_Damage1.png</File>
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier_Damage2.png</File>
@@ -22,6 +23,26 @@
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/Ship.png</File>
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/ShipBullet.wav</File>
     <File>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/ShipHit.wav</File>
+=======
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier_Damage1.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier_Damage2.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier_Damage3.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/Barrier_Damage4.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/GameFont.spritefont</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_00.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_01.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderB_00.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderB_01.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderBullet.wav</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderC_00.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderC_01.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderHit.wav</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderShot.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/Ship.png</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/ShipBullet.wav</File>
+    <File>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/ShipHit.wav</File>
+>>>>>>> Stashed changes
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

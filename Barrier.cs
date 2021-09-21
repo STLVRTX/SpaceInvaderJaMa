@@ -46,11 +46,11 @@ namespace SpaceInvaderJaMa
         {
             foreach (Barrier b in Level.Barriers)
             {
-                foreach (Shot s in PlayerShip.bullets.ToArray())
+                foreach (Shot s in PlayerShip.Bullets.ToArray())
                 {
                     if (new Rectangle((int)Position.X, (int)Position.Y, Size.X, Size.Y).Intersects(new Rectangle((int)s.Position.X, (int)s.Position.Y, s.Size.X, s.Size.Y)))
                     {
-                        PlayerShip.bullets.Remove(s);
+                        PlayerShip.Bullets.Remove(s);
                         Game.Components.Remove(s);
                     }
                 }

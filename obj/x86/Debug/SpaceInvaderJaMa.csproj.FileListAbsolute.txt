@@ -226,6 +226,7 @@ C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Co
 C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\InvaderHit.xnb
 C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipBullet.xnb
 C:\Users\Seraph\Source\Repos\SirBloody\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipHit.xnb
+<<<<<<< Updated upstream
 C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Sheet.xnb
 C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage1.xnb
 C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Damage2.xnb
@@ -235,3 +236,10 @@ C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\I
 C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\InvaderHit.xnb
 C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipBullet.xnb
 C:\Users\Janik\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipHit.xnb
+=======
+C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\Barrier_Sheet.xnb
+C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\InvaderBullet.xnb
+C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\InvaderHit.xnb
+C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipBullet.xnb
+C:\Users\stud\Documents\GitHub\SpaceInvaderJaMa\bin\Windows\x86\Debug\Content\ShipHit.xnb
+>>>>>>> Stashed changes

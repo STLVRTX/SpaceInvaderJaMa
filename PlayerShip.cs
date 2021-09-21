@@ -12,11 +12,6 @@ namespace SpaceInvaderJaMa
 {
     class PlayerShip : BasicSpriteComponent
     {
-        #region Fields
-        public static List<Shot> bullets = new List<Shot>();
-        public Shot playerShot;
-        #endregion
-
         #region Properties
         private float Speed { get; set; }
         private float ShotSpeed { get; set; }
@@ -24,6 +19,8 @@ namespace SpaceInvaderJaMa
         private float ShotDelay { get; set; }
         public int Hp { get; set; }
         public Level Level { get; set; }
+        public Shot PlayerShot { get; set; }
+        public static List<Shot> Bullets {  get; set; }
         #endregion
 
         #region Constructor
@@ -36,7 +33,8 @@ namespace SpaceInvaderJaMa
             OnCooldown = false;
             ShotDelay = 750;
             Level = level;
-            playerShot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition, Level);
+            PlayerShot = new Shot(Game, "Shot", Game.Content.Load<Texture2D>("InvaderShot"), CenterPosition, Level);
+            Bullets = new List<Shot>();
         }
         #endregion
 
@@ -46,9 +44,9 @@ namespace SpaceInvaderJaMa
             if (GameState.CurrentGameState == "Game")
             {
                 Controls(gameTime);
-                foreach (Shot s in bullets.ToArray())
+                foreach (Shot s in Bullets.ToArray())
                 {
-                    if (s.Position.Y <= 50) { bullets.Remove(s); Game.Components.Remove(s); }
+                    if (s.Position.Y <= 50) { Bullets.Remove(s); Game.Components.Remove(s); }
                     s.Position += Up * (float)gameTime.ElapsedGameTime.TotalSeconds * ShotSpeed;
                 }
                 DetectCollision();
@@ -75,10 +73,10 @@ namespace SpaceInvaderJaMa
             {
                 if (!OnCooldown)
                 {
-                    Shot s = playerShot.CopyShot();
+                    Shot s = PlayerShot.CopyShot();
                     s.Position = new Vector2(CenterPosition.X, CenterPosition.Y - 10);
                     Game.Components.Add(s);
-                    bullets.Add(s);
+                    Bullets.Add(s);
                     OnCooldown = true;
                     ShotDelay = 750;
                     GameController.PlayerBullet.Play(0.1f, 0, 0);

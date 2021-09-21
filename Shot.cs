@@ -13,7 +13,6 @@ namespace SpaceInvaderJaMa
     {
         #region Properties
         public float Speed { get; set; }
-
         public Level Level { get; set; }
         #endregion
 
