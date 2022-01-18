@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<<<<<<< Updated upstream
   <SourceFile>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/ShipBullet.wav</SourceFile>
-  <SourceTime>2021-09-21T09:45:33.1153109+02:00</SourceTime>
+  <SourceTime>2022-01-12T10:52:54.3740934+01:00</SourceTime>
   <DestFile>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Content/ShipBullet.xnb</DestFile>
-  <DestTime>2021-09-21T09:45:53.3865932+02:00</DestTime>
-=======
-  <SourceFile>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/ShipBullet.wav</SourceFile>
-  <SourceTime>2021-09-21T00:51:55.7950053+02:00</SourceTime>
-  <DestFile>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Content/ShipBullet.xnb</DestFile>
-  <DestTime>2021-09-21T00:52:40.1244699+02:00</DestTime>
->>>>>>> Stashed changes
+  <DestTime>2022-01-12T13:36:13.3164168+01:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<<<<<<< Updated upstream
   <SourceFile>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_00.png</SourceFile>
-  <SourceTime>2021-09-19T10:04:31.1523101+02:00</SourceTime>
+  <SourceTime>2022-01-12T10:52:54.3740934+01:00</SourceTime>
   <DestFile>C:/Users/Janik/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Content/InvaderA_00.xnb</DestFile>
-  <DestTime>2021-09-21T09:45:49.1299293+02:00</DestTime>
-=======
-  <SourceFile>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/InvaderA_00.png</SourceFile>
-  <SourceTime>2021-09-20T09:42:17.6942268+02:00</SourceTime>
-  <DestFile>C:/Users/stud/Documents/GitHub/SpaceInvaderJaMa/Content/bin/Windows/Content/InvaderA_00.xnb</DestFile>
-  <DestTime>2021-09-21T00:52:35.4499681+02:00</DestTime>
->>>>>>> Stashed changes
+  <DestTime>2022-01-12T13:36:09.8239325+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

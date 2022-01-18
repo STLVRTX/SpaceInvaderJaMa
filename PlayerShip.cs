@@ -106,6 +106,7 @@ namespace SpaceInvaderJaMa
                     if(Hp <= 0)
                     {
                         GameState.CurrentGameState = "Game Over";
+                        GameController.setHighscore();
                     }
                 }
             }

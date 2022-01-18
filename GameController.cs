@@ -60,6 +60,7 @@ namespace SpaceInvaderJaMa
             InvaderBullet = Content.Load<SoundEffect>("InvaderBullet");
             PlayerBullet = Content.Load<SoundEffect>("ShipBullet");
             SoundEffect.MasterVolume = 0.1f;
+            Highscore.Instance = new Highscore();
         }
 
         protected override void UnloadContent()
@@ -102,6 +103,8 @@ namespace SpaceInvaderJaMa
             base.Update(gameTime);
         }
 
+        bool scoreSaved = false;
+
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
@@ -125,7 +128,38 @@ namespace SpaceInvaderJaMa
                 spriteBatch.DrawString(font, "Press Space to Continue", new Vector2(200, 325), Color.White);
             }
             else if (GameState.CurrentGameState == "Game Over")
-                spriteBatch.DrawString(font, "Game Over!", new Vector2(250, 400), Color.White);
+            {
+                spriteBatch.DrawString(font, "Game Over!", new Vector2(250, 200), Color.White);
+                int count = 0;
+
+                if(Highscore.Instance.highscores.Count < 3)
+                {
+                    count = Highscore.Instance.highscores.Count;
+                }
+                else
+                {
+                    count = 5;
+                }
+                
+                for(int i = 0; i < count; i++)
+                {
+                    if(Highscore.Instance.highscores[i] != 0)
+                    {
+                        spriteBatch.DrawString(font, (i+1).ToString() + ". " + Highscore.Instance.highscores[i].ToString(), new Vector2(275, 250+(i * 25)), Color.White);
+                    }
+                }
+                if (!scoreSaved)
+                {
+                    Score = Convert.ToInt32(Math.Ceiling(Score - (Math.Round(gameTime.TotalGameTime.TotalSeconds) * 5)));
+                    if(Score < 0)
+                    {
+                        Score = 0;
+                    }
+                    setHighscore();
+                    scoreSaved = true;
+                }
+                spriteBatch.DrawString(font, "YOUR SCORE: " + Score, new Vector2(225, 400), Color.White);
+            }     
             spriteBatch.End();
         }
 
@@ -150,6 +184,11 @@ namespace SpaceInvaderJaMa
                 return;
             int random = rnd.Next(0, level.ShootingInvaders.Count);
             level.ShootingInvaders[random].Shoot();
+        }
+
+        public static void setHighscore()
+        {
+            Highscore.AddToList(Score);
         }
         #endregion
     }
