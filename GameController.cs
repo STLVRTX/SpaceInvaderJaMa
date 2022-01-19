@@ -132,22 +132,6 @@ namespace SpaceInvaderJaMa
                 spriteBatch.DrawString(font, "Game Over!", new Vector2(250, 200), Color.White);
                 int count = 0;
 
-                if(Highscore.Instance.highscores.Count < 3)
-                {
-                    count = Highscore.Instance.highscores.Count;
-                }
-                else
-                {
-                    count = 5;
-                }
-                
-                for(int i = 0; i < count; i++)
-                {
-                    if(Highscore.Instance.highscores[i] != 0)
-                    {
-                        spriteBatch.DrawString(font, (i+1).ToString() + ". " + Highscore.Instance.highscores[i].ToString(), new Vector2(275, 250+(i * 25)), Color.White);
-                    }
-                }
                 if (!scoreSaved)
                 {
                     Score = Convert.ToInt32(Math.Ceiling(Score - (Math.Round(gameTime.TotalGameTime.TotalSeconds) * 5)));
@@ -157,6 +141,22 @@ namespace SpaceInvaderJaMa
                     }
                     setHighscore();
                     scoreSaved = true;
+                }
+
+                if (Highscore.Instance.highscores.Count < 5)
+                {
+                    count = Highscore.Instance.highscores.Count;
+                }
+                else
+                {
+                    count = 5;
+                }
+                for (int i = 0; i < count; i++)
+                {
+                    if (Highscore.Instance.highscores[i] != 0)
+                    {
+                        spriteBatch.DrawString(font, (i + 1).ToString() + ". " + Highscore.Instance.highscores[i].ToString(), new Vector2(275, 250 + (i * 25)), Color.White);
+                    }
                 }
                 spriteBatch.DrawString(font, "YOUR SCORE: " + Score, new Vector2(225, 400), Color.White);
             }     

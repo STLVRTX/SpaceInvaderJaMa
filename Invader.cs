@@ -143,14 +143,17 @@ namespace SpaceInvaderJaMa
                     }
                     switch (GameController.Score)
                     {
+                        case 150: GameController.ShotDelay -= 50; break;
                         case 500: GameController.ShotDelay -= 50; break;
+                        case 750: GameController.ShotDelay -= 50; break;
                         case 1000: GameController.ShotDelay -= 50; break;
                         case 1500: GameController.ShotDelay -= 50; break;
                         case 2000: GameController.ShotDelay -= 50; break;
-                        case 2500: GameController.ShotDelay -= 50; break;
-                        case 3000: GameController.ShotDelay -= 50; break;
+                        case 2500: GameController.ShotDelay -= 100; break;
+                        case 3000: GameController.ShotDelay -= 100; break;
                         case 3500: GameController.ShotDelay -= 100; break;
                         case 4000: GameController.ShotDelay -= 100; break;
+                        case 4500: GameController.ShotDelay -= 100; break;
                     }
                 }
             }
